@@ -18,7 +18,7 @@ namespace ZaupShop
         {
             get
             {
-                return AllowedCaller.Player;
+                return AllowedCaller.Both;
             }
         }
         public string Name
@@ -52,7 +52,7 @@ namespace ZaupShop
         }
         public void Execute(IRocketPlayer playerid, string[] msg)
         {
-            ZaupShop.Instance.Cost((UnturnedPlayer)playerid, msg);
+            ZaupShop.Instance.Cost(playerid, msg);
         }
     }
 }
