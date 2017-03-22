@@ -185,6 +185,14 @@ namespace ZaupShop
                     {
                         "invalid_shop_command",
                         "You entered an invalid shop command."
+                    },
+                    {
+                        "no_buy_price",
+                        "You can't buy the item {0}, but you can sell for {1} {2}."
+                    },
+                    {
+                        "no_sell_price",
+                        "You can't sell the item {0}, but you can buy for {1} {2}."
                     }
                 };
             }
@@ -437,6 +445,14 @@ namespace ZaupShop
                     if (cost <= 0m && bbp <= 0m)
                     {
                         message = ZaupShop.Instance.Translate("error_getting_cost", new object[] {name});
+                    }
+                    else if (cost <= 0m && bbp > 0m)
+                    {
+                        message = ZaupShop.Instance.Translate("no_buy_price", new object[] { name, bbp.ToString(), Uconomy.Instance.Configuration.Instance.MoneyName });
+                    }
+                    else if (cost > 0m && bbp <= 0m)
+                    {
+                        message = ZaupShop.Instance.Translate("no_sell_price", new object[] { name, cost.ToString(), Uconomy.Instance.Configuration.Instance.MoneyName });
                     }
                     UnturnedChat.Say(playerid, message);
                     break;
