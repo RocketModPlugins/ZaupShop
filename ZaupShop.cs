@@ -48,7 +48,7 @@ namespace ZaupShop
                     },
                     {
                         "error_getting_cost",
-                        "There was an error getting the cost of {0}!"
+                        "{0} cannot be sold to or purchased from the shop."
                     },
                     {
                         "item_cost_msg",
@@ -434,7 +434,7 @@ namespace ZaupShop
                     cost = ZaupShop.Instance.ShopDB.GetItemCost(id);
                     decimal bbp = ZaupShop.Instance.ShopDB.GetItemBuyPrice(id);
                     message = ZaupShop.Instance.Translate("item_cost_msg", new object[] {name, cost.ToString(), Uconomy.Instance.Configuration.Instance.MoneyName, bbp.ToString(), Uconomy.Instance.Configuration.Instance.MoneyName});
-                    if (cost <= 0m)
+                    if (cost <= 0m && bbp <= 0m)
                     {
                         message = ZaupShop.Instance.Translate("error_getting_cost", new object[] {name});
                     }
