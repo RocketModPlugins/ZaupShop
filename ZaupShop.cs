@@ -48,11 +48,11 @@ namespace ZaupShop
                     },
                     {
                         "error_getting_cost",
-                        "There was an error getting the cost of {0}!"
+                        "{0} ({1}) cannot be sold to or purchased from the shop."
                     },
                     {
                         "item_cost_msg",
-                        "The item {0} costs {1} {2} to buy and gives {3} {4} when you sell it."
+                        "The item {0} ({1}) costs {2} {3} to buy and gives {4} {5} when you sell it."
                     },
                     {
                         "vehicle_cost_msg",
@@ -185,6 +185,14 @@ namespace ZaupShop
                     {
                         "invalid_shop_command",
                         "You entered an invalid shop command."
+                    },
+                    {
+                        "no_buy_price",
+                        "You can't buy the item {0} ({1}), but you can sell for {2} {3}."
+                    },
+                    {
+                        "no_sell_price",
+                        "You can't sell the item {0} ({1}), but you can buy for {2} {3}."
                     }
                 };
             }
@@ -433,10 +441,18 @@ namespace ZaupShop
                     }
                     cost = ZaupShop.Instance.ShopDB.GetItemCost(id);
                     decimal bbp = ZaupShop.Instance.ShopDB.GetItemBuyPrice(id);
-                    message = ZaupShop.Instance.Translate("item_cost_msg", new object[] {name, cost.ToString(), Uconomy.Instance.Configuration.Instance.MoneyName, bbp.ToString(), Uconomy.Instance.Configuration.Instance.MoneyName});
-                    if (cost <= 0m)
+                    message = ZaupShop.Instance.Translate("item_cost_msg", new object[] {name, id, cost.ToString(), Uconomy.Instance.Configuration.Instance.MoneyName, bbp.ToString(), Uconomy.Instance.Configuration.Instance.MoneyName});
+                    if (cost <= 0m && bbp <= 0m)
                     {
-                        message = ZaupShop.Instance.Translate("error_getting_cost", new object[] {name});
+                        message = ZaupShop.Instance.Translate("error_getting_cost", new object[] {name, id});
+                    }
+                    else if (cost <= 0m && bbp > 0m)
+                    {
+                        message = ZaupShop.Instance.Translate("no_buy_price", new object[] { name, id, bbp.ToString(), Uconomy.Instance.Configuration.Instance.MoneyName });
+                    }
+                    else if (cost > 0m && bbp <= 0m)
+                    {
+                        message = ZaupShop.Instance.Translate("no_sell_price", new object[] { name, id, cost.ToString(), Uconomy.Instance.Configuration.Instance.MoneyName });
                     }
                     UnturnedChat.Say(playerid, message);
                     break;
