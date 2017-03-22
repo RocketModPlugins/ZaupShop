@@ -1,0 +1,162 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="c:\program files (x86)\microsoft visual studio\2017\community\team tools\static analysis tools\fxcop\Xml\CodeAnalysisReport.xsl"?>
+<FxCopReport Version="15.0">
+ <Targets>
+  <Target Name="C:\Users\vpastor\Documents\GitHub\ZaupShop\bin\Debug\ZaupShop.dll">
+   <Modules>
+    <Module Name="zaupshop.dll">
+     <Namespaces>
+      <Namespace Name="ZaupShop">
+       <Types>
+        <Type Name="DatabaseMgr" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#AddItem(System.Int32,System.String,System.Decimal,System.Boolean)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2017-03-22 11:38:36Z" FixCategory="DependsOnFix">
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="C:\Users\vpastor\Documents\GitHub\ZaupShop" File="DatabaseMgr.cs" Line="121">The query string passed to 'MySqlCommand.CommandText.set(string)' in 'DatabaseMgr.AddItem(int, string, decimal, bool)' could contain the following variables 'ZaupShop.Instance.Configuration.Instance.ItemShopTableName', 'name', 'new string[9][5]', 'new string[9][7]'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="C:\Users\vpastor\Documents\GitHub\ZaupShop" File="DatabaseMgr.cs" Line="106">The query string passed to 'MySqlCommand.CommandText.set(string)' in 'DatabaseMgr.AddItem(int, string, decimal, bool)' could contain the following variables 'ZaupShop.Instance.Configuration.Instance.ItemShopTableName', 'new string[9][3]', 'name', 'new string[9][7]'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#AddVehicle(System.Int32,System.String,System.Decimal,System.Boolean)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2017-03-22 11:38:36Z" FixCategory="DependsOnFix">
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="C:\Users\vpastor\Documents\GitHub\ZaupShop" File="DatabaseMgr.cs" Line="176">The query string passed to 'MySqlCommand.CommandText.set(string)' in 'DatabaseMgr.AddVehicle(int, string, decimal, bool)' could contain the following variables 'ZaupShop.Instance.Configuration.Instance.VehicleShopTableName', 'name', 'new string[9][5]', 'new string[9][7]'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="C:\Users\vpastor\Documents\GitHub\ZaupShop" File="DatabaseMgr.cs" Line="161">The query string passed to 'MySqlCommand.CommandText.set(string)' in 'DatabaseMgr.AddVehicle(int, string, decimal, bool)' could contain the following variables 'ZaupShop.Instance.Configuration.Instance.VehicleShopTableName', 'new string[9][3]', 'name', 'new string[9][7]'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#CheckSchema()" Kind="Method" Static="False" Accessibility="Assembly" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2017-03-22 11:38:36Z" FixCategory="DependsOnFix">
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="C:\Users\vpastor\Documents\GitHub\ZaupShop" File="DatabaseMgr.cs" Line="26">The query string passed to 'MySqlCommand.CommandText.set(string)' in 'DatabaseMgr.CheckSchema()' could contain the following variables 'ZaupShop.Instance.Configuration.Instance.ItemShopTableName'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="C:\Users\vpastor\Documents\GitHub\ZaupShop" File="DatabaseMgr.cs" Line="30">The query string passed to 'MySqlCommand.CommandText.set(string)' in 'DatabaseMgr.CheckSchema()' could contain the following variables 'ZaupShop.Instance.Configuration.Instance.ItemShopTableName'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="C:\Users\vpastor\Documents\GitHub\ZaupShop" File="DatabaseMgr.cs" Line="60">The query string passed to 'MySqlCommand.CommandText.set(string)' in 'DatabaseMgr.CheckSchema()' could contain the following variables 'ZaupShop.Instance.Configuration.Instance.ItemShopTableName'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="C:\Users\vpastor\Documents\GitHub\ZaupShop" File="DatabaseMgr.cs" Line="64">The query string passed to 'MySqlCommand.CommandText.set(string)' in 'DatabaseMgr.CheckSchema()' could contain the following variables 'ZaupShop.Instance.Configuration.Instance.ItemShopTableName'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="C:\Users\vpastor\Documents\GitHub\ZaupShop" File="DatabaseMgr.cs" Line="43">The query string passed to 'MySqlCommand.CommandText.set(string)' in 'DatabaseMgr.CheckSchema()' could contain the following variables 'ZaupShop.Instance.Configuration.Instance.VehicleShopTableName'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="C:\Users\vpastor\Documents\GitHub\ZaupShop" File="DatabaseMgr.cs" Line="47">The query string passed to 'MySqlCommand.CommandText.set(string)' in 'DatabaseMgr.CheckSchema()' could contain the following variables 'ZaupShop.Instance.Configuration.Instance.VehicleShopTableName'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#DeleteItem(System.Int32)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2017-03-22 11:38:36Z" FixCategory="DependsOnFix">
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="C:\Users\vpastor\Documents\GitHub\ZaupShop" File="DatabaseMgr.cs" Line="272">The query string passed to 'MySqlCommand.CommandText.set(string)' in 'DatabaseMgr.DeleteItem(int)' could contain the following variables 'ZaupShop.Instance.Configuration.Instance.ItemShopTableName', 'new string[5][3]'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#DeleteVehicle(System.Int32)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2017-03-22 11:38:36Z" FixCategory="DependsOnFix">
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="C:\Users\vpastor\Documents\GitHub\ZaupShop" File="DatabaseMgr.cs" Line="305">The query string passed to 'MySqlCommand.CommandText.set(string)' in 'DatabaseMgr.DeleteVehicle(int)' could contain the following variables 'ZaupShop.Instance.Configuration.Instance.VehicleShopTableName', 'new string[5][3]'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#GetItemBuyPrice(System.Int32)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2017-03-22 11:38:36Z" FixCategory="DependsOnFix">
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="C:\Users\vpastor\Documents\GitHub\ZaupShop" File="DatabaseMgr.cs" Line="374">The query string passed to 'MySqlCommand.CommandText.set(string)' in 'DatabaseMgr.GetItemBuyPrice(int)' could contain the following variables 'ZaupShop.Instance.Configuration.Instance.ItemShopTableName', 'new string[5][3]'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#GetItemCost(System.Int32)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2017-03-22 11:38:36Z" FixCategory="DependsOnFix">
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="C:\Users\vpastor\Documents\GitHub\ZaupShop" File="DatabaseMgr.cs" Line="215">The query string passed to 'MySqlCommand.CommandText.set(string)' in 'DatabaseMgr.GetItemCost(int)' could contain the following variables 'ZaupShop.Instance.Configuration.Instance.ItemShopTableName', 'new string[5][3]'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#GetVehicleCost(System.Int32)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2017-03-22 11:38:36Z" FixCategory="DependsOnFix">
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="C:\Users\vpastor\Documents\GitHub\ZaupShop" File="DatabaseMgr.cs" Line="244">The query string passed to 'MySqlCommand.CommandText.set(string)' in 'DatabaseMgr.GetVehicleCost(int)' could contain the following variables 'ZaupShop.Instance.Configuration.Instance.VehicleShopTableName', 'new string[5][3]'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#SetBuyPrice(System.Int32,System.Decimal)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2017-03-22 11:38:36Z" FixCategory="DependsOnFix">
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="C:\Users\vpastor\Documents\GitHub\ZaupShop" File="DatabaseMgr.cs" Line="338">The query string passed to 'MySqlCommand.CommandText.set(string)' in 'DatabaseMgr.SetBuyPrice(int, decimal)' could contain the following variables 'ZaupShop.Instance.Configuration.Instance.ItemShopTableName', 'new string[7][3]', 'new string[7][5]'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="ZaupShop" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#OnShopBuy" Kind="Event" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="DeclareEventHandlersCorrectly" Category="Microsoft.Design" CheckId="CA1009" Status="Active" Created="2017-03-22 11:38:36Z" FixCategory="Breaking">
+             <Issue Name="First" Certainty="95" Level="Error">Declare the first parameter of 'ZaupShop.PlayerShopBuy' as an object named 'sender'.</Issue>
+             <Issue Name="Second" Certainty="95" Level="Error">Declare the second parameter of 'ZaupShop.PlayerShopBuy' as an EventArgs, or an instance of a type that extends EventArgs, named 'e'.</Issue>
+             <Issue Name="TooMany" Certainty="95" Level="Error">Remove all but the first two parameters of 'ZaupShop.PlayerShopBuy'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#OnShopSell" Kind="Event" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="DeclareEventHandlersCorrectly" Category="Microsoft.Design" CheckId="CA1009" Status="Active" Created="2017-03-22 11:38:36Z" FixCategory="Breaking">
+             <Issue Name="First" Certainty="95" Level="Error">Declare the first parameter of 'ZaupShop.PlayerShopSell' as an object named 'sender'.</Issue>
+             <Issue Name="Second" Certainty="95" Level="Error">Declare the second parameter of 'ZaupShop.PlayerShopSell' as an EventArgs, or an instance of a type that extends EventArgs, named 'e'.</Issue>
+             <Issue Name="TooMany" Certainty="95" Level="Error">Remove all but the first two parameters of 'ZaupShop.PlayerShopSell'.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+       </Types>
+      </Namespace>
+     </Namespaces>
+    </Module>
+   </Modules>
+  </Target>
+ </Targets>
+ <Rules>
+  <Rule TypeName="DeclareEventHandlersCorrectly" Category="Microsoft.Design" CheckId="CA1009">
+   <Name>Declare event handlers correctly</Name>
+   <Description>By convention, .NET events have two parameters that specify the event sender and event data. Event handler signatures should follow this form: void MyEventHandler(object sender, EventArgs e). The 'sender' parameter is always of type System.Object, even if it is possible to employ a more specific type. The 'e' parameter is always of type System.EventArgs. Events that do not provide event data should use the System.EventHandler delegate type. Event handlers return void so that they can send each event to multiple target methods. Any value returned by a target would be lost after the first call.</Description>
+   <Resolution Name="First">Declare the first parameter of {0} as an object named 'sender'.</Resolution>
+   <Resolution Name="Second">Declare the second parameter of {0} as an EventArgs, or an instance of a type that extends EventArgs, named 'e'.</Resolution>
+   <Resolution Name="TooMany">Remove all but the first two parameters of {0}.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182133.aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="95">Error</MessageLevel>
+   <File Name="designrules.dll" Version="15.0.0.0" />
+  </Rule>
+  <Rule TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100">
+   <Name>Review SQL queries for security vulnerabilities</Name>
+   <Description>A SQL command string built from user input is vulnerable to SQL injection attacks. Microsoft SQL Server and other database servers support stored procedures and parameterized SQL queries, which reduce the risk of injection attacks.</Description>
+   <Resolution Name="WithNonLiterals">The query string passed to {0} in {1} could contain the following variables {2}. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Resolution>
+   <Owner>RuleOwner</Owner>
+   <Url>http://msdn.microsoft.com/library/ms182310.aspx</Url>
+   <Email />
+   <MessageLevel Certainty="75">Warning</MessageLevel>
+   <File Name="dataflowrules.dll" Version="15.0.0.0" />
+  </Rule>
+ </Rules>
+ <Localized>
+  <String Key="Category">Category</String>
+  <String Key="Certainty">Certainty</String>
+  <String Key="CollapseAll">Collapse All</String>
+  <String Key="CheckId">Check Id</String>
+  <String Key="Error">Error</String>
+  <String Key="Errors">error(s)</String>
+  <String Key="ExpandAll">Expand All</String>
+  <String Key="Help">Help</String>
+  <String Key="Line">Line</String>
+  <String Key="Messages">message(s)</String>
+  <String Key="LocationNotStoredInPdb">[Location not stored in Pdb]</String>
+  <String Key="Project">Project</String>
+  <String Key="Resolution">Resolution</String>
+  <String Key="Rule">Rule</String>
+  <String Key="RuleFile">Rule File</String>
+  <String Key="RuleDescription">Rule Description</String>
+  <String Key="Source">Source</String>
+  <String Key="Status">Status</String>
+  <String Key="Target">Target</String>
+  <String Key="Warning">Warning</String>
+  <String Key="Warnings">warning(s)</String>
+  <String Key="ReportTitle">Code Analysis Report</String>
+ </Localized>
+</FxCopReport>
