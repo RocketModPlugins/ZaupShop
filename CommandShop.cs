@@ -95,17 +95,14 @@ namespace ZaupShop
                         break;
                 }
             }
-            if (!console)
+            if (console || ((UnturnedPlayer)caller).IsAdmin)
             {
-                if (((UnturnedPlayer)caller).IsAdmin)
-                {
-                    perms[0] = true;
-                    perms[1] = true;
-                    perms[2] = true;
-                    perms[3] = true;
-                    perms[4] = true;
-                    anyuse = true;
-                }
+                perms[0] = true;
+                perms[1] = true;
+                perms[2] = true;
+                perms[3] = true;
+                perms[4] = true;
+                anyuse = true;
             }
             if (!anyuse)
             {
