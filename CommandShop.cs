@@ -43,7 +43,7 @@ namespace ZaupShop
         {
             get
             {
-                return "<add | rem | chng | buy> [v.]<itemid> <cost>";
+                return "<add | rem | chng | sell> [v.]<itemid> <cost>";
             }
         }
         public List<string> Aliases
@@ -52,12 +52,12 @@ namespace ZaupShop
         }
         public List<string> Permissions
         {
-            get { return new List<string>() { "shop.*", "shop.add", "shop.rem", "shop.chng", "shop.buy" }; }
+            get { return new List<string>() { "shop.*", "shop.add", "shop.rem", "shop.chng", "shop.sell" }; }
         }
         public void Execute(IRocketPlayer caller, string[] msg)
         {
             bool console = (caller is ConsolePlayer);
-            string[] permnames = { "shop.*", "shop.add", "shop.rem", "shop.chng", "shop.buy" };
+            string[] permnames = { "shop.*", "shop.add", "shop.rem", "shop.chng", "shop.sell" };
             bool[] perms = { false, false, false, false, false };
             bool anyuse = false;
             string message;
@@ -81,7 +81,7 @@ namespace ZaupShop
                         perms[3] = true;
                         anyuse = true;
                         break;
-                    case "shop.buy":
+                    case "shop.sell":
                         perms[4] = true;
                         anyuse = true;
                         break;
@@ -268,7 +268,7 @@ namespace ZaupShop
                                 break;
                         }
                         break;
-                    case "buy":
+                    case "sell":
                         if (!perms[4] && !perms[0])
                         {
                             message = ZaupShop.Instance.Translate("no_permission_shop_buy", new object[] { });

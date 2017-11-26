@@ -40,7 +40,7 @@ namespace ZaupShop
                     },
                     {
                         "shop_command_usage",
-                        "Usage: /shop <add/rem/chng/buy> [v.]<itemid> <cost>  <cost> is not required for rem, buy is only for items."
+                        "Usage: /shop <add/rem/chng/sell> [v.]<itemid> <cost>  <cost> is not required for rem, sell is only for items."
                     },
                     {
                         "error_giving_item",
@@ -148,7 +148,7 @@ namespace ZaupShop
                     },
                     {
                         "no_permission_shop_buy",
-                        "You don't have permission to use the shop buy msg."
+                        "You don't have permission to use the shop sell msg."
                     },
                     {
                         "changed",
