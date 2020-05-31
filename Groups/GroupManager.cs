@@ -57,7 +57,7 @@ namespace ZaupShop.Groups
         public bool IsBlacklisted(IRocketPlayer caller, ushort id, bool vehicle)
         {
             if (!Blacklisting)
-                return true;
+                return false;
 
             foreach (ZaupGroup group in Groups.Where(x => !x.Whitelist))
             {
